@@ -1,0 +1,26 @@
+<app-year-picker *ngIf="mode === 'YEAR'" 
+                 [label]="label"
+                 [formControl]="_yearPickerCtrl" 
+                 [max]="max" 
+                 [min]="min"
+                 [touchUi]="touchUi"
+>
+</app-year-picker>
+
+<app-month-picker *ngIf="_showMonthPicker" 
+                  [label]="label" 
+                  [formControl]="_monthPickerCtrl"
+                  [max]="max" 
+                  [min]="min" 
+                  [mode]="mode"
+                  [touchUi]="touchUi">
+</app-month-picker>
+
+<app-regular-datepicker *ngIf="_showRegularDatepicker" 
+                        [label]="label"
+                        [formControl]="_regularPickerCtrl"
+                        [max]="max" 
+                        [min]="min" 
+                        [mode]="mode" 
+                        [touchUi]="touchUi">
+</app-regular-datepicker>

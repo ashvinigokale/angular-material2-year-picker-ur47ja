@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">
+	Angular Material 2 App
+</mat-toolbar>
+<div class="basic-container">
+	<div>
+		YEAR PICKER:
+		<app-custom-date-picker  mode="YEAR" label="Choose a year" [(ngModel)]="chosenYearDate" [max]="2020"></app-custom-date-picker><br>
+    {{chosenYearDate}}
+	</div>
+	<div>
+		MONTH PICKER:
+		<app-custom-date-picker *ngIf="visible" mode="MONTH" label="Choose a month" touchUi="true" [formControl]="monthInputCtrl"
+		 [max]="'3/2020'"></app-custom-date-picker><br>
+    {{monthInputCtrl.value}}
+	</div>
+	<div>
+		SEMESTER PICKER:
+		<app-custom-date-picker mode="SEMESTER" label="Start of semester" [(ngModel)]="chosenSemesterDate"
+		 [max]="'3/2020'"></app-custom-date-picker>
+     <br>
+    {{chosenSemesterDate}}
+	</div>
+  <div>
+    DAY PICKER:
+		<app-custom-date-picker label="Choose a date" [(ngModel)]="chosenDate"></app-custom-date-picker><br>
+    {{chosenDate}}
+	</div>
+	<div>
+    WEEK PICKER:
+		<app-custom-date-picker mode="WEEK" label="Choose a week" touchUi="true" [(ngModel)]="chosenWeekDate"></app-custom-date-picker><br>
+    {{chosenWeekDate}}
+	</div>
+  <button (click)="visible=!visible">Click to hide</button>
+</div>
+
+<!--
+Copyright Google LLC All Rights Reserved.
+
+Use of this source code is governed by an MIT-style license that can be
+found in the LICENSE file at https://angular.io/license
+-->
